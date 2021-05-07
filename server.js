@@ -4,7 +4,7 @@ const app = express();
 
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
-const url = 'https://osu.ppy.sh/users/16660909'
+const url = 'your osu profile url'
 http.listen(12125, async() => {
     console.log('server created')
 })
