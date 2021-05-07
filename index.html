@@ -1,0 +1,22 @@
+<head>
+    <style>
+        @font-face {
+            font-family: 'Century Gothic';
+            src: url('.\\Century\\Gothic.ttf');
+        }
+    </style>
+</head>
+<body style="background-color:rgb(80,77,110); font-family: Century Gothic; color:#fff; font-size: 30;">
+    <div id='grank'></div>
+    <div id='crank'></div>
+    <div id='pp'></div>
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js" integrity="sha384-DkkWv9oJFWLIydBXXjkBWnG1/fuVhw8YPBq37uvvD6WSYRFRqr21eY5Dg9ZhmWdy" crossorigin="anonymous"></script>
+<script>
+    var socket = io();
+    socket.on('update', (grank,crank,pp) => {
+        document.getElementById('grank').innerText = `Global Rank: #${grank}`
+        document.getElementById('crank').innerText = `Country Rank: #${crank}`
+        document.getElementById('pp').innerText = `Total PP: ${pp}`
+    })
+</script>
+</body>
